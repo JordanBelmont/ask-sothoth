@@ -121,7 +121,7 @@
    }
 
    .sothoth-image {
-      width: 70%;
+      width: 85%;
    }
 
    .sothoth-title-container {
@@ -131,8 +131,8 @@
 
    .sothoth-title {
       width: 40%;
-      top: 190px;
-      right: 210px;
+      top: 120px;
+      right: 350px;
       position: absolute;
    }
 
