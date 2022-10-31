@@ -104,8 +104,8 @@
    background: none;
 }
 
-/* * MACBOOK PRO * */
-@media only screen and (min-width: 1280px) {
+/* * LARGE * */
+@media only screen and (min-width: 1543px) {
    .sothoth-display {
       display: grid;
       grid-template-columns: 1fr 1fr;
