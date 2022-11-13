@@ -103,10 +103,9 @@
    color: none;
    background: none;
 }
-
-/* * LARGE * */
+/* * MEDIUM * */
 @media only screen and (min-width: 1543px) {
-   body {
+body {
       display: grid;
       grid-template-rows: 100vh;
       align-items: center;
@@ -208,5 +207,15 @@
       letter-spacing: 2px;
       font-size: 3.2vw;
       padding: 45px;
+   }
+}
+
+/* * LARGE * */
+@media only screen and (min-width: 2008px) {
+   .sothoth-title {
+      width: 40%;
+      top: 100px;
+      right: 350px;
+      position: absolute;
    }
 }
