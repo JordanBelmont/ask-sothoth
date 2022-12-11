@@ -41,17 +41,18 @@ document.getElementById("sothothForm").addEventListener("submit", function (even
 // AUDIO ON SUBMIT
 
 let audioSources = [
-   "audio/voice1.mp3",
-   "audio/voice2.mp3",
-   "audio/voice3.mp3",
-   "audio/voice4.mp3",
-   "audio/voice5.mp3",
-   "audio/voice6.mp3",
-   "audio/voice7.mp3",
-   "audio/voice8.mp3",
-   "audio/voice9.mp3",
-   "audio/voice10.mp3",
-   "audio/voice11.mp3"
+   "./audio/voice1.mp3",
+   "./audio/voice2.mp3",
+   "./audio/voice3.mp3",
+   "./audio/voice4.mp3",
+   "./audio/voice5.mp3",
+   "./audio/voice6.mp3",
+   "./audio/voice7.mp3",
+   "./audio/voice8.mp3",
+   "./audio/voice9.mp3",
+   "./audio/voice10.mp3",
+   "./audio/voice11.mp3"
+
 ];
 
 document.getElementById("sothothForm").addEventListener("submit", play = () => {
