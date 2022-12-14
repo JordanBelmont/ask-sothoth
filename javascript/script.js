@@ -52,7 +52,6 @@ let audioSources = [
    "./audio/voice9.mp3",
    "./audio/voice10.mp3",
    "./audio/voice11.mp3"
-
 ];
 
 document.getElementById("sothothForm").addEventListener("submit", play = () => {
