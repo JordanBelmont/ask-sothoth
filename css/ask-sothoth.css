@@ -4,7 +4,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: space-between;
+   justify-content: center;
    margin: 1rem;
 }
 
@@ -18,8 +18,13 @@
    width: 100%;
 }
 
+.right-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
 .sothoth-title-container {
-   order: 1;
    text-align: center;
 }
 
@@ -27,29 +32,21 @@
    width: 100%;
 }
 
-.sothoth-slogan-container {
-   order: 2;
-   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   text-align: center;
-   width: 100%;
-}
-
-.sothoth-slogan-container p {
-   font-family: 'Carosello';
-   color: red;
-   font-size: 1.6rem;
-   margin-top: 0.6rem;
-   line-height: 1.2rem;
-   letter-spacing: 0.1rem;
-   pointer-events: none;
-   width: 100%;
-}
-
 .sothoth-slogan-container::selection {
    color: none;
    background: none;
+}
+
+.sothoth-slogan-container p {
+   display: none;
+   font-family: 'Carosello';
+   color: red;
+   font-size: 2rem;
+   margin-top: 2rem;
+   line-height: 1.5rem;
+   letter-spacing: 0.1rem;
+   pointer-events: none;
+   width: 100%;
 }
 
 .sothoth-span {
@@ -96,22 +93,58 @@
    font-family: 'Coffee&Tea';
 }
 
+.modal {
+   display: none;
+}
+
 .sothoth-answer-container {
-   order: 5;
-   margin-top: 0.6rem;
+   position: fixed;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background-color: rgba(0, 0, 0, 0.8);
 }
 
 .sothoth-answer {
    font-family: 'MrsMonster';
+   color: rgb(0, 0, 0);
    pointer-events: none;
    width: 100%;
    text-align: center;
    font-size: 2rem;
+   animation: glow 2s ease-in-out infinite alternate;
 }
 
-.sothoth-answer::selection {
-   color: none;
-   background: none;
+@keyframes glow {
+   from {
+      text-shadow: -1px -1px 5px rgb(11, 192, 108), 1px -1px 5px rgb(11, 192, 108), -1px 1px 5px rgb(11, 192, 108), 1px 1px 5px rgb(11, 192, 108);
+   }
+
+   to {
+      text-shadow: -1px -1px 10px rgb(47, 255, 158), 1px -1px 10px rgb(47, 255, 158), -1px 1px 10px rgb(47, 255, 158), 1px 1px 10px rgb(47, 255, 158);
+      ;
+   }
+}
+
+button {
+   position: absolute;
+   top: 2rem;
+   right: 2rem;
+   appearance: none;
+   background-color: transparent;
+   outline: none;
+   border: none;
+}
+
+button p {
+   font-family: 'MrsMonster';
+   color: black;
+   font-size: 2rem;
+   animation: glow 2s ease-in-out infinite alternate;
 }
 
 /* * TABLETS * */
@@ -124,15 +157,11 @@
    }
 
    .sothoth-slogan-container {
-      margin-top: 1rem;
-      display: none;
-   }
-
-   .sothoth-slogan-container p {
-      font-size: 2rem;
-      margin-top: 2rem;
-      line-height: 1.5rem;
-      letter-spacing: 0.1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: center;
+      width: 100%;
    }
 
    .sothoth-span {
@@ -162,10 +191,6 @@
       padding: 0.4rem;
    }
 
-   .sothoth-answer-container {
-      margin-top: 2rem;
-   }
-
    .sothoth-answer {
       font-size: 4rem;
    }
@@ -174,12 +199,12 @@
 /* * LAPTOPS * */
 @media only screen and (min-width: 769px) {
 
-   .sothoth-image-container {
-      margin-top: 0.8rem;
+   .sothoth-image {
+      width: 80%;
    }
 
+
    .sothoth-form {
-      order: 4;
       margin-top: 2rem;
       width: 80%;
    }
@@ -187,10 +212,6 @@
    .sothoth-input {
       font-size: 2rem;
       padding: 0.4rem;
-   }
-
-   .sothoth-answer-container {
-      margin-top: 2rem;
    }
 
    .sothoth-answer {
@@ -202,58 +223,48 @@
 @media only screen and (min-width: 1025px) {
 
    .sothoth-image {
-      width: 55%;
-   }
-
-   .sothoth-form {
-      width: 50%;
+      width: 60%;
    }
 }
 
 /* * TV * */
-@media only screen and (min-width: 1600px) and (max-width: 2560px) {
+@media only screen and (min-width: 1772px) and (max-width: 2560px) {
 
    body {
-      display: grid;
-      grid-template-rows: 100vh;
       align-items: center;
    }
 
    .sothoth-display {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 30% 28% 10% 32%;
-      margin: 10rem 1rem;
+      position: relative;
+      max-width: 2000px;
+      margin: 0 auto;
+      height: 100vh;
+   }
+
+   .right-container {
+      width: 50%;
+      margin-left: auto;
    }
 
    .sothoth-image-container {
-      order: 0;
-      margin-top: 0;
-      grid-column: span 1;
-      grid-row: span 4;
+      position: absolute;
+      top: 30px;
+      bottom: 30px;
+      left: 30px;
    }
 
    .sothoth-image {
-      width: 100%
-   }
-
-   .sothoth-title-container {
-      order: 0;
+      width: 100%;
+      height: 100%;
    }
 
    .sothoth-title {
-      width: 50%;
-      top: 5%;
-      right: 10%;
-      position: absolute;
-   }
-
-   .sothoth-slogan-container {
-      order: 0;
-      display: block;
+      position: relative;
+      left: -50px;
    }
 
    .sothoth-slogan-container p {
+      display: block;
       font-size: 4rem;
       line-height: 4rem;
    }
@@ -275,10 +286,8 @@
    }
 
    .sothoth-form {
-      order: 0;
       display: flex;
       justify-content: center;
-      margin-right: 22%;
       margin-top: 0;
       width: 80%;
    }
@@ -286,17 +295,16 @@
    .sothoth-input {
       width: 90%;
       font-size: 2rem;
-      margin-top: 8rem;
+      margin-top: 3rem;
       align-self: flex-start;
    }
 
    .sothoth-answer-container {
-      order: 0;
       display: flex;
       justify-content: center;
       text-align: center;
-      margin-right: 22%;
-      margin-top: 3rem;
+      /* margin-right: 22%;
+      margin-top: 3rem; */
    }
 
    .sothoth-answer {

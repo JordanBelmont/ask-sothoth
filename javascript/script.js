@@ -32,11 +32,16 @@ document.getElementById("sothothForm").addEventListener("submit", function (even
       store[question] = number
       event.preventDefault();
       document.getElementById("sothothAnswer").textContent = answers[number]
+      document.querySelector('.modal').style.display = 'block'
    } else {
       alert("Use a question mark at the end of the question")
       event.preventDefault();
    }
 });
+
+document.querySelector('.modal button').addEventListener("click", function () {
+   document.querySelector('.modal').style.display = 'none'
+})
 
 // AUDIO ON SUBMIT
 
